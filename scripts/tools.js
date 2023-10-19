@@ -1,27 +1,21 @@
-export const arrayLength = (array) => {
-  let count = 0;
-  // eslint-disable-next-line no-unused-vars
-  for (const _item of array) {
-    count++;
+export class ArrayClass {
+  length(array) {
+    let count = 0;
+    // eslint-disable-next-line no-unused-vars
+    for (const _item of array) {
+      count++;
+    }
+
+    return count;
   }
 
-  return count;
-};
+  pop(array) {
+    if (array.length === 0) return undefined;
 
-export const arrayPush = (array) => {
-  const arrayLengthValue = arrayLength(array);
-  const arrayPushValue = arrayLengthValue + 1;
-  return arrayPushValue;
-};
+    const arrayPopValue = array[array.length - 1];
 
-export const arrayPop = (array) => {
-  const arrayPopLast = array[array.length - 1];
-  const arrayPopValue = arrayPopLast;
-  return arrayPopValue;
-};
+    array.length -= 1;
 
-export const arrayShift = (array) => {
-  const arrayShiftFirst = array[0];
-  const arrayShiftValue = arrayShiftFirst;
-  return arrayShiftValue;
-};
+    return arrayPopValue;
+  }
+}
